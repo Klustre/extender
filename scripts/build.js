@@ -1,4 +1,3 @@
-// TODO: Copy static files
 import copyStaticFiles from 'esbuild-copy-static-files'
 import babel from 'esbuild-plugin-babel'
 import { build } from 'esbuild'
@@ -6,7 +5,6 @@ import fs from 'fs-extra'
 import 'dotenv/config'
 
 const devmode = process.env.NODE_ENV === 'development'
-
 const outdir = devmode ? 'build' : 'dist'
 const pkg = await fs.readJson('./package.json')
 
@@ -31,6 +29,9 @@ build({
     bundle: true,
     sourcemap: devmode,
     plugins: [
+        copyStaticFiles({
+            dest: outdir,
+        }),
         babel({
             config: {
                 presets: [
