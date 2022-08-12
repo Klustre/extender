@@ -11,6 +11,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
+## [0.0.5] - 2022-08-12
+
+### Added
+- Exposes `PRODUCT_DISPLAY_NAME` environment variable
+- Copies static files from `/static`
+
+### Changed
+- Renamed entrypoint to `main.js` instead of `app.js`
+
+### Fixed
+- Improves debug configuration
+
 ## [0.0.1] - 2022-08-11
 
 Initial "release"
