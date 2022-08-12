@@ -5,21 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Extendscript",
+            "name": "Launch Extendscript",
             "type": "extendscript-debug",
-            "request": "attach",
-            // TODO: Set debugging paths
-            "aliasPath": "",
-            // "osx": {
-            //     "aliasPath": "",
-            // },
-            // "windows": {
-            //     "aliasPath": "",
-            // },
-            "hostAppSpecifier": "premierepro-22.0",
-            "presentation": {
-                "hidden": true,
-            },
+            "request": "launch",
+            "script": "${workspaceFolder}/build/main.jsx",
+            // NOTE: Enable `hostAppSpecifier` to avoid being prompted
+            // "hostAppSpecifier": "premierepro-22.0",
         },
     ],
 }
