@@ -12,7 +12,7 @@ const pkg = await fs.readJson('./package.json')
 
 const options = {
     logLevel: 'info',
-    entryPoints: [ 'src/app.js' ],
+    entryPoints: [ 'src/main.js' ],
     define: {
         'DEVMODE': devmode,
         'PRODUCT_NAME': JSON.stringify(pkg.name),
