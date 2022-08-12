@@ -15,8 +15,9 @@ const options = {
     entryPoints: [ 'src/app.js' ],
     define: {
         'DEVMODE': devmode,
-        'PRODUCT_VERSION': JSON.stringify(pkg.version),
         'PRODUCT_NAME': JSON.stringify(pkg.name),
+        'PRODUCT_DISPLAY_NAME': JSON.stringify(pkg.displayName),
+        'PRODUCT_VERSION': JSON.stringify(pkg.version),
     },
 }
 

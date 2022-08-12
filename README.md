@@ -39,7 +39,8 @@ All variables are replaced by their values upon bundling.
 
 By default the bundler exposes:
 - `DEVMODE` when `NODE_ENV` is `development` or not,
-- `PRODUCT_NAME` which is `name` from `package.json` and 
+- `PRODUCT_NAME` which is `name` from `package.json`,
+- `PRODUCT_DISPLAY_NAME` which is `displayName` from `package.json` and
 - `PRODUCT_VERSION` which is `version` from `package.json`
 
 If you have a `.env` file it will automatically expose the variables by their name to all Javascript files.
