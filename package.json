@@ -4,6 +4,9 @@
 	"version": "0.0.5",
 	"type": "module",
 	"private": true,
+	"engines": {
+		"node": ">=16.7.0"
+	},
 	"scripts": {
 		"start": "NODE_ENV=development npm-run-all build",
 		"release": "NODE_ENV=production run-s build jsxbin",
