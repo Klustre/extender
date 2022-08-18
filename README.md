@@ -21,19 +21,23 @@ Other starters don't actually transform modern Javascript, so you have to write 
 - Copies static files from `/static` (with [esbuild-copy-static-files](https://github.com/nickjj/esbuild-copy-static-files))
 
 ## Try the example
-1. Copy `.env.example` and remove the `.example` extension
+1. Duplicate `.env.example` and remove the `.example` extension
 1. Run `npm install && npm start` in your terminal
-1. Run `/build/app.jsx` in your Adobe app of choice
+1. Run `/build/extender.jsx` in your Adobe app of choice
 
 ## Development
 ```
 npm install && npm start
 ```
 
+This will start watching your source files and builds into the `build` folder.
+
 ## Release
 ```
 npm run release
 ```
+
+This will bundle, minify and jsxbin your source files into the `dist` folder.
 
 ## Environment Variables
 All variables are replaced by their values upon bundling.
@@ -46,16 +50,22 @@ By default the bundler exposes:
 
 If you have a `.env` file it will automatically expose the variables by their name to all Javascript files.
 
+## Entrypoints
+Every `.js` file in the root of the `source/` folder is considered an entrypoint. Multiple entrypoints will result in multiple scripts being bundled separately, keeping the same name as their entrypoint. If there's a single entrypoint it will be renamed to `name` from `package.json`.
+
 ## Debugging
 Press `F5` in VSCode to launch the debugger and you will be prompted for the host application. To avoid the prompt set the `hostAppSpecifier` in `launch.json`
 
-You can't use breakpoints in your source files, because the [Extendscript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug) doesn't support source maps. Instead, use a `debugger` statement in your source files or set breakpoints in the bundled file (`/build/main.jsx`).
+You can't use breakpoints in your source files, because the [Extendscript Debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug) doesn't support source maps. Instead, use a `debugger` statement in your source files or set breakpoints in the bundled file (`/build/{PRODUCT_NAME}.jsx`).
 
 ## Import Node Modules
 You can import Node modules by simply using `import xyz from 'xyz'`. Note that they can't contain browser or Node APIs. Also note that quite some modern Javascript **is not yet** ponyfilled by [babel-preset-extendscript](https://github.com/fusepilot/babel-preset-extendscript#features).
 
 ## Static Files
 The contents of `/static` will be copied to the `outdir` whenever you run the bundler. This is useful for icons, readme files, etc. Note that any changes in this folder will not be watched, so you need to run the bundler again or save a change in your source files.
+
+## Minification
+Only whitespaces are removed and variable names are shortened. The syntax remains intact to avoid Extendscript errors.
 
 ## Typescript
 You should even be able to [make it work with Typescript](https://esbuild.github.io/content-types/#typescript) if that's your thing.

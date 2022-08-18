@@ -11,8 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
-## [0.0.5] - 2022-08-12
+## [0.0.6]
+### Added
+- Minimum required Node version as `engines` in `package.json`
+- Every `.js` file in `src/` is considered an entrypoint
+- Multiple entrypoints result in multiple scripts
+- A single entrypoint is renamed to `name` from `package.json`
 
+### Changed
+- Minification does not rewrite syntax to avoid Extendscript errors
+
+## [0.0.5] - 2022-08-12
 ### Added
 - Exposes `PRODUCT_DISPLAY_NAME` environment variable
 - Copies static files from `/static`
@@ -24,5 +33,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improves debug configuration
 
 ## [0.0.1] - 2022-08-11
-
 Initial "release"
