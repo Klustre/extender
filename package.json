@@ -6,7 +6,7 @@
 	"private": true,
 	"scripts": {
 		"start": "NODE_ENV=development npm-run-all build",
-		"release": "NODE_ENV=production npm-run-all build jsxbin",
+		"release": "NODE_ENV=production run-s build jsxbin",
 		"jsxbin": "node ./scripts/jsxbin.js",
 		"build": "node ./scripts/build.js"
 	},

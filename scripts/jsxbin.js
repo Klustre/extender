@@ -8,16 +8,20 @@ import path from 'path'
 const devmode = process.env.NODE_ENV === 'development'
 const outdir = devmode ? 'build' : 'dist'
 
-const extensionName = 'adobe.extendscript-debug'
-const extensionPath = path.join(homedir(), '.vscode', 'extensions')
-const extensions = await readdir(extensionPath)
-const extendscript = extensions.find((f) => f.includes(extensionName))
-const exportJSXBin = path.join(extensionPath, extendscript, 'public-scripts', 'exportToJSXBin.js')
 const curDir = path.resolve(outdir)
 const foundScripts = await readdirp.promise(curDir, { fileFilter: '*.jsx' })
 const scripts = foundScripts.map((f) => f.fullPath)
+const exportJSXBin = await getExtensionPath()
 
 scripts.forEach((script) => {
     fork(exportJSXBin, ['-f', '-n', script])
         .on('close', () => renameSync(`${script}bin`, script))
 })
+
+async function getExtensionPath() {
+    const extensionsPath = path.join(homedir(), '.vscode', 'extensions')
+    const extensions = await readdir(extensionsPath)
+    const extensionName = 'adobe.extendscript-debug'
+    const extendscript = extensions.find((f) => f.includes(extensionName))
+    return path.join(extensionsPath, extendscript, 'public-scripts', 'exportToJSXBin.js')
+}
