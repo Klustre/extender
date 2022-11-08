@@ -72,7 +72,7 @@ You can't use breakpoints in your source files, because the [Extendscript Debugg
 
 To import JavaScript files as strings you can suffix them with `.text.js` and import them with a custom default name. This is useful when you have expressions that you want to import as strings. Having them as separate files allows you to format and lint them separately, use TypeScript definitions on them, etc.
 
-See [src/main.js](https://github.com/Klustre/extender/blob/main/src/main.js#L3) and [src/expression.text.js](https://github.com/Klustre/extender/blob/main/src/expression.text.js)
+See [src/main.js](https://github.com/Klustre/extender/blob/main/src/main.js#L3) and [src/expression.text.js](https://github.com/Klustre/extender/blob/main/src/modules/expression.text.js)
 
 ## Import Node Modules
 
