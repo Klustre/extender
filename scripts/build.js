@@ -33,9 +33,13 @@ build({
     minifyWhitespace: !devmode,
     minifyIdentifiers: !devmode,
     outExtension: { '.js': '.jsx' },
+    loader: { 
+        '.text.js': 'text',
+    },
     plugins: [
         copyStaticFiles({ dest: outdir }),
         babel({
+            filter: /[^.text].js/,
             config: {
                 presets: [
                     ['extendscript', { modules: false }]

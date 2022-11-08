@@ -1,5 +1,8 @@
 import { notify } from './modules/utils.js'
 import merge from 'just-merge'
+import expression from './modules/expression.text.js'
+
+notify(expression)
 
 const obj = { a: 3, b: 5 }
 const merged = merge(obj, { a: 4, c: 8 })
