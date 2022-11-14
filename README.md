@@ -6,22 +6,24 @@ _(yes, another one)_
 
 ## Why?
 
-Writing Extendscript (EcmaScript 3) is rather annoying once you're used to modern Javascript. You expect to use array methods and common practices such as `.env` files, no-nonsense bundling, rebuilding on changes, etc.
+Writing Extendscript (Ecmascript 3) is rather annoying once you're used to modern Javascript. You expect to use array methods and common practices such as `.env` files, no-nonsense bundling, rebuilding on changes, etc.
 
 Other starters don't actually transform modern Javascript, so you have to write helper functions for your beloved array methods which totally defeats the point of writing modern Javascript. You might polyfill them, but that pollutes the global scope _(which is bad for everyone if you found a shitty implementation on Stack Overflow)._
 
 ## Features
 
 - Modern Javascript with [ponyfills](https://github.com/sindresorhus/ponyfill#how-are-ponyfills-better-than-polyfills) (see [babel-preset-extendscript](https://github.com/fusepilot/babel-preset-extendscript))
-- EcmaScript Modules for importing and exporting
+- Ecmascript modules for importing and exporting
 - Fast bundling with [esbuild](https://github.com/evanw/esbuild) _(TODO: insert obligatory lightning bolt emoji)_
 - Rebundles on file changes
 - Minifies the release version
 - Converts to binary with [extendscript-debugger](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug)
 - Wraps bundle in an [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE) to avoid global variables
 - Exposes environment variables to Javascript files
-- Ponyfills JSON (no need to include it)
+- Includes JSON automatically as a ponyfill
 - Copies static files from `/static` (with [esbuild-copy-static-files](https://github.com/nickjj/esbuild-copy-static-files))
+- Imports `.text.js` files as strings
+- Imports icons as binary strings
 
 ## Try the example
 
