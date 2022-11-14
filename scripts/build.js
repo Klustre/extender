@@ -1,5 +1,6 @@
 import copyStaticFiles from 'esbuild-copy-static-files'
 import babel from 'esbuild-plugin-babel'
+import binaryString from './plugin.js'
 import { build } from 'esbuild'
 import { join } from 'path'
 import fs from 'fs-extra'
@@ -38,6 +39,7 @@ build({
     },
     plugins: [
         copyStaticFiles({ dest: outdir }),
+        binaryString(),
         babel({
             filter: /[^.text].js/,
             config: {

@@ -72,7 +72,13 @@ You can't use breakpoints in your source files, because the [Extendscript Debugg
 
 To import JavaScript files as strings you can suffix them with `.text.js` and import them with a custom default name. This is useful when you have snippets that you want to import as strings. Having them as separate files allows you to format and lint them separately, use TypeScript definitions on them, etc. Note that they will be imported as-is and don't get transpiled.
 
-See [src/main.js](https://github.com/Klustre/extender/blob/main/src/main.js#L3) and [src/expression.text.js](https://github.com/Klustre/extender/blob/main/src/modules/expression.text.js)
+See [src/main.js](./src/main.js#L3) and [src/expression.text.js](./src/modules/expression.text.js)
+
+## Import Icons as Binary String
+
+Using icons in [scriptUI](https://extendscript.docsforadobe.dev/user-interface-tools/) is easiest when you add them to your source code. To do this you can import the icons directly as `.png` or `.jpg`. They are then transformed to a binary string that can be read by [`File.decode()`](https://extendscript.docsforadobe.dev/file-system-access/file-object.html#decode).
+
+See [src/main.js](./src/main.js#L14)
 
 ## Import Node Modules
 
