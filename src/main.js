@@ -1,3 +1,6 @@
+/// <reference types="types-for-adobe/AfterEffects/18.0"/>
+/// <reference types="types-for-adobe/shared/ScriptUI"/>
+
 import { notify } from './modules/utils.js'
 import merge from 'just-merge'
 import expression from './modules/expression.text.js'

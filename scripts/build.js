@@ -20,7 +20,10 @@ const define = {
 }
 
 for (const key in process.env) {
-    define[key] = JSON.stringify(process.env[key])
+    const invalid = key.includes('(x86)')
+    if (!invalid) {
+        define[key] = JSON.stringify(process.env[key])
+    }
 }
 
 build({

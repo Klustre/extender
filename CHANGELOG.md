@@ -12,19 +12,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
-## [0.0.8]
+## [0.0.9] - 2022-11-22
+
+### Added
+
+- References to 'Types for Adobe' types
+
+### Fixed
+
+- Cross platform npm scripts
+- Error handling in `jsxbin.js`
+- Script path in `launch.json`
+
+## [0.0.8] - 2022-11-14
 
 ### Added
 
 - Import `.png` and `.jpg` icons as binary string
 
-## [0.0.7]
+## [0.0.7] - 2022-11-08
 
 ### Added
 
 - Import JavaScript files as text
 
-## [0.0.6]
+## [0.0.6] - 2022-08-18
 
 ### Added
 

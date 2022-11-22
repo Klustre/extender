@@ -74,13 +74,13 @@ You can't use breakpoints in your source files, because the [Extendscript Debugg
 
 To import JavaScript files as strings you can suffix them with `.text.js` and import them with a custom default name. This is useful when you have snippets that you want to import as strings. Having them as separate files allows you to format and lint them separately, use TypeScript definitions on them, etc. Note that they will be imported as-is and don't get transpiled.
 
-See [src/main.js](./src/main.js#L3) and [src/expression.text.js](./src/modules/expression.text.js)
+See [src/main.js](./src/main.js#L6) and [src/expression.text.js](./src/modules/expression.text.js)
 
 ## Import Icons as Binary String
 
 Using icons in [scriptUI](https://extendscript.docsforadobe.dev/user-interface-tools/) is easiest when you add them to your source code. To do this you can import the icons directly as `.png` or `.jpg`. They are then transformed to a binary string that can be read by [`File.decode()`](https://extendscript.docsforadobe.dev/file-system-access/file-object.html#decode).
 
-See [src/main.js](./src/main.js#L14)
+See [src/main.js](./src/main.js#L17)
 
 ## Import Node Modules
 
@@ -94,6 +94,16 @@ The contents of `/static` will be copied to the `outdir` whenever you run the bu
 
 Only whitespaces are removed and variable names are shortened. The syntax remains intact to avoid Extendscript errors.
 
+## Types for Adobe
+
+[Types for Adobe](https://github.com/aenhancers/Types-for-Adobe) is part of the package, so you can simply use [triple-slash directives](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) to get the type definitions for your target app. Or create a [`tsconfig.json`](https://github.com/hyperbrew/bolt-cep/blob/master/src/jsx/tsconfig.json) to define which types to use in the whole project.
+
+See [src/main.js](./src/main.js#L1-L2)
+
 ## Typescript
 
 You should even be able to [make it work with Typescript](https://esbuild.github.io/content-types/#typescript) if that's your thing.
+
+## By the way
+
+You can still write regular old Extendscript without the modern syntax.

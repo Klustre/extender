@@ -1,20 +1,21 @@
 {
 	"name": "extender",
 	"displayName": "Extender",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"type": "module",
 	"private": true,
 	"engines": {
 		"node": ">=16.7.0"
 	},
 	"scripts": {
-		"start": "NODE_ENV=development npm-run-all build",
-		"release": "NODE_ENV=production run-s build jsxbin",
+		"start": "cross-env NODE_ENV=development npm-run-all build",
+		"release": "cross-env NODE_ENV=production run-s build jsxbin",
 		"jsxbin": "node ./scripts/jsxbin.js",
 		"build": "node ./scripts/build.js"
 	},
 	"devDependencies": {
 		"babel-preset-extendscript": "^1.0.2",
+		"cross-env": "^7.0.3",
 		"dotenv": "^16.0.1",
 		"esbuild": "^0.14.10",
 		"esbuild-copy-static-files": "^0.1.0",
@@ -24,6 +25,7 @@
 		"just-merge": "^3.1.1",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.5.1",
-		"readdirp": "^3.6.0"
+		"readdirp": "^3.6.0",
+		"types-for-adobe": "^7.0.7"
 	}
 }
