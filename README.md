@@ -22,7 +22,7 @@ Other starters don't actually transform modern Javascript, so you have to write 
 - Exposes environment variables to Javascript files
 - Includes JSON automatically as a ponyfill
 - Copies static files from `/static` (with [esbuild-copy-static-files](https://github.com/nickjj/esbuild-copy-static-files))
-- Imports `?text` suffixed files as strings
+- Imports `?text` suffixed paths as strings
 - Imports icons as binary strings
 
 ## Try the example
@@ -72,7 +72,7 @@ You can't use breakpoints in your source files, because the [Extendscript Debugg
 
 ## Import JavaScript as String
 
-To import JavaScript files as strings you can suffix them with `?text` and import them with a custom default name. This is useful when you have snippets that you want to import as strings. Having them as separate files allows you to format and lint them separately, use TypeScript definitions on them, etc. Note that they will be imported as-is and don't get transpiled. This works for any other text based files.
+To import JavaScript files as strings you can suffix the path with `?text` and import them with a custom default name. This is useful when you have snippets that you want to import as strings. Having them as separate files allows you to format and lint them separately, use TypeScript definitions on them, etc. Note that they will be imported as-is and don't get transpiled. This works for any other text based files.
 
 See [src/main.js](./src/main.js#L6)
 
