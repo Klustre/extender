@@ -3,7 +3,7 @@
 
 import { notify } from './modules/utils.js'
 import merge from 'just-merge'
-import expression from './modules/expression.text.js'
+import expression from './modules/expression.js?text'
 import icon from './icons/icon.png'
 
 const obj = { a: 3, b: 5 }

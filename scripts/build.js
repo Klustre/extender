@@ -1,6 +1,7 @@
 import copyStaticFiles from 'esbuild-copy-static-files'
 import babel from 'esbuild-plugin-babel'
-import binaryString from './plugin.js'
+import binaryString from './binary.js'
+import textLoader from './text.js'
 import { build } from 'esbuild'
 import { join } from 'path'
 import fs from 'fs-extra'
@@ -37,14 +38,11 @@ build({
     minifyWhitespace: !devmode,
     minifyIdentifiers: !devmode,
     outExtension: { '.js': '.jsx' },
-    loader: { 
-        '.text.js': 'text',
-    },
     plugins: [
         copyStaticFiles({ dest: outdir }),
         binaryString(),
+        textLoader(),
         babel({
-            filter: /[^.text].js/,
             config: {
                 presets: [
                     ['extendscript', { modules: false }]

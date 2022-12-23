@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Fixed` for any bug fixes
 - `Security` in case of vulnerabilities
 
+## [0.0.10] - 2022-12-23
+
+### Changed
+
+- Import as text with `?text` suffix instead of `.text.js`
+
 ## [0.0.9] - 2022-11-22
 
 ### Added

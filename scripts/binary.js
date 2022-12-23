@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
 
-export function binaryString() {
+export default function binaryString() {
     return {
         name: 'binary',
         setup(build) {
@@ -16,5 +16,3 @@ export function binaryString() {
         }
     }
 }
-
-export default binaryString
